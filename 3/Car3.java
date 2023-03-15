@@ -3,7 +3,7 @@ class Car3 {
     private int no;  //自動車のナンバー
     private int speed;  //自動車の速度
 
-    //メソッド(操作)
+    //コンストラクタ
     public Car3() {  //コンストラクタのメソッドで、実行用ファイルで引数がない場合でもデフォルトの0で初期化できるようにしている
         no = 0;
     }
@@ -11,6 +11,7 @@ class Car3 {
         no = n;
     }
 
+    //メソッド(操作)
     public void run(int s) {
         speed = s;
     }

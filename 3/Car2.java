@@ -10,7 +10,6 @@ class Car2 {
     Car2(int n) {  //コンストラクタのメソッドで、実行用ファイルで初期化できるようにしている
         no = n;
     }
-
     void run(int s) {
         speed = s;
     }
