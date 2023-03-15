@@ -1,12 +1,12 @@
-class Student2{
+class Student3{
     String name;
     int engScore;
     int mathScore;
 
-    void setData(String n){  //オーバーロード
+    Student3(String n){   //コンストラクタ
         name = n;
     }
-    void setData(String n, int e, int m){  //オーバーロード
+    Student3(String n, int e, int m){   //コンストラクタ
         name = n;
         engScore = e;
         mathScore = m;
