@@ -2,7 +2,7 @@ public class Student3 extends Person3{
     private int stuNo;
 
     public Student3(String name){
-        this(name, 999);
+        this(name, 999); //this()はコンストラクタの呼び出し。7行目のStudent3(String name, int stuNo)を呼び出していることになる
     }
     public Student3(String name, int stuNo){
         super(name);
