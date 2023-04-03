@@ -3,65 +3,34 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();  //人数
+        sc.nextLine();
+        int[] retention = new int[n];  //各々のボールの保持数の配列
 
-        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            retention[i] = sc.nextInt();  //ボールの保持数
+        }
+        sc.nextLine();
+        //　この時点で、配列retentionには、[0] =>1人目のボール保持数、、[1] =>2人目のボール保持数、[2] =>3人目のボール保持数がが入った
+        int m =  sc.nextInt();  //パス回しの回数
         sc.nextLine();
 
-        String cards; //4桁の番号を入れる入れる変数
+        for (int i = 0; i < m; i++) {
+            int gives = sc.nextInt() - 1;  //渡す人のインデックス
+            int receives = sc.nextInt() - 1;  //渡される人のインデックス
+            int passNum =sc.nextInt();  //渡す数
+            sc.nextLine();
 
-        for (int i  = 0; i < n; i++) {
-            cards = sc.nextLine();  //1回目でcards[0]に、"7777"を代入
-            String[] num = cards.split("");
-            Arrays.sort(num);
-            Judgment(num);
+            if (retention[gives] - passNum >= 0) {
+                retention[gives] -= passNum;
+                retention[receives] += passNum;
+            } else {
+                retention[receives] += retention[gives];
+                retention[gives] -= retention[gives];
+            }
         }
-    }
-    public static void Judgment(String num[]) {
-        if (Objects.equals(num[0], num[1]) && Objects.equals(num[1], num[2]) && Objects.equals(num[2], num[3])) {
-            System.out.println("Four Card");
-        } else if (Objects.equals(num[0], num[1]) && Objects.equals(num[1], num[2])) {
-            System.out.println("Three Card");
-        } else if (Objects.equals(num[1], num[2]) && Objects.equals(num[2], num[3])) {
-            System.out.println("Three Card");
-        } else if (Objects.equals(num[0], num[1]) && Objects.equals(num[2], num[3])) {
-            System.out.println("Two Pair");
-        } else if (Objects.equals(num[0], num[1]) || Objects.equals(num[1], num[2]) || Objects.equals(num[2], num[3])) {
-            System.out.println("One Pair");
-        } else {
-            System.out.println("No Pair");
+        for (int x : retention) {
+            System.out.println(x);
         }
     }
 }
-
-
-//import java.util.*;
-//
-//public class Main {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//
-//        int n = sc.nextInt();
-//        sc.nextLine();
-//
-//        String cards; //4桁の番号を入れる入れwつ
-//
-//        for (int i  = 0; i < n; i++) {
-//            cards = sc.nextLine();  //1回目でcards[0]に、"7777"を代入
-//            String[] num = cards.split("");
-//            Arrays.sort(num);
-//            if (Objects.equals(num[0], num[1]) && Objects.equals(num[1], num[2]) && Objects.equals(num[2], num[3])) {
-//                System.out.println("Four Card");
-//            } else if (Objects.equals(num[0], num[1]) && Objects.equals(num[1], num[2])) {
-//                System.out.println("Three Card");
-//            } else if (Objects.equals(num[1], num[2]) && Objects.equals(num[2], num[3])) {
-//                System.out.println("Three Card");
-//            } else if (Objects.equals(num[0], num[1]) && Objects.equals(num[2], num[3])) {
-//                System.out.println("Two Pair");
-//            } else if (Objects.equals(num[0], num[1]) || Objects.equals(num[1], num[2]) || Objects.equals(num[2], num[3])) {
-//                System.out.println("One Pair");
-//            } else {
-//                System.out.println("No Pair");
-//            }
-//        }
-//    }
-//}
