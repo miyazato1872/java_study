@@ -1,4 +1,4 @@
-class Car{  //スーパークラス
+class Car{
     Car(){
         System.out.println("Car()");
     }

@@ -1,36 +1,30 @@
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();  //人数
-        sc.nextLine();
-        int[] retention = new int[n];  //各々のボールの保持数の配列
+        String[] winNum = new String[6];  //当たり番号の配列
 
-        for (int i = 0; i < n; i++) {
-            retention[i] = sc.nextInt();  //ボールの保持数
+        for (int i = 0; i < 6 ; i++) {  //当たり番号を配列に代入していく
+            winNum[i] = sc.next();
         }
-        sc.nextLine();
-        //　この時点で、配列retentionには、[0] =>1人目のボール保持数、、[1] =>2人目のボール保持数、[2] =>3人目のボール保持数がが入った
-        int m =  sc.nextInt();  //パス回しの回数
-        sc.nextLine();
 
-        for (int i = 0; i < m; i++) {
-            int gives = sc.nextInt() - 1;  //渡す人のインデックス
-            int receives = sc.nextInt() - 1;  //渡される人のインデックス
-            int passNum =sc.nextInt();  //渡す数
-            sc.nextLine();
-
-            if (retention[gives] - passNum >= 0) {
-                retention[gives] -= passNum;
-                retention[receives] += passNum;
-            } else {
-                retention[receives] += retention[gives];
-                retention[gives] -= retention[gives];
+        int n = sc.nextInt();  //くじの枚数
+        sc.nextLine();
+        String[] buyNum = new String[6]; //購入したくじの番号の配列
+        for (int x = 0; x < n; x++) {
+            for (int i = 0; i < 6; i++) {
+                buyNum[i] = sc.next();  //ここで購入くじの番号を配列に代入
             }
-        }
-        for (int x : retention) {
-            System.out.println(x);
+            int count = 0;  //カウンタ変数
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
+                    if (winNum[i].equals(buyNum[j])) {
+                        count += 1;
+                    }
+                }
+            }
+            System.out.println(count);
         }
     }
 }

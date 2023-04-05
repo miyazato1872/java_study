@@ -1,4 +1,4 @@
-public class Person5{  //スーパークラス
+public class Person5{
     private String name;
 
     public Person5(String name){

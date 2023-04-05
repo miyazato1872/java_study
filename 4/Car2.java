@@ -1,9 +1,8 @@
-public class Car2{  //スーパークラス
+public class Car2{
     private int no;
 
-    //メソッド
-    public Car2(int no){
-        this.no = no;  //thisキーワードで、左側は2行目のno変数を表している
+    public Car2(int no){  //コンストラクタ
+        this.no = no;  //this.noはメンバ変数。noは引数
     }
     public void display(){
         System.out.println("ナンバーは" + no + "です");

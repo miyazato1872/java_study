@@ -1,15 +1,15 @@
-public class Student5 extends Person5{  //サブクラス
+public class Student5 extends Person5{
     private int stuNo;
 
     public Student5(String name, int stuNo){
         super(name);
         this.stuNo = stuNo;
     }
-    public void display(){  //オーバーライドしている
-        super.display();  //スーパークラスのdisplayメソッドを実行
+    public void display(){  //オーバーライド
+        super.display();
         System.out.println("学籍番号：" + stuNo);
     }
-    public void chgStuNo(int stuNo){
+    public void chgStuNo(int stuNo){  //サブクラス独自
         this.stuNo = stuNo;
     }
 }

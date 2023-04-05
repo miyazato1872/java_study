@@ -1,25 +1,25 @@
-public class Taxi2 extends Car2 {  //サブクラス
-    //メンバ変数(属性)
+public class Taxi2 extends Car2 {
+    //メンバ変数
     private int price;
 
-    //メソッド(操作)
+    //コンストラクタ
     public Taxi2(int no) {
-        this(no, 0);  //this()の記述によって、このクラスのコンストラクタを呼び出している。このクラスのコンストラクタは、下のメソッドのTaxi2のことを指す
+        this(no, 0);  //this()で、このクラスのコンストラクタを呼び出すので、9行目のコンストラクタを呼び出して値を代入している
     }
     public Taxi2(int no, int price) {
-        super(no);//この記述によって、スーパークラスのコンストラクタを呼び出している。スーパークラスのコンストラクタはCar2クラスのCar2メソッドのこと。
+        super(no);  //スーパークラスのコンストラクタを呼び出し
         this.price = price;
     }
 
-    public void start() {
+    //メソッド
+    public void start() {  //変数priceに420を設定
         price = 420;
     }
-    public void run() {
-        price = price + 80;
+    public void run() {  //変数priceに80を加算
+        price += 80;
     }
-    public void display() {
-        super.display(); //スーパークラスのメソッドを使っている
+    public void display() {  //変数priceを表示
+        super.display();  //スーパークラスのdisplayメソッドを呼び出している
         System.out.println("料金は" + price + "円です");
     }
 }
-

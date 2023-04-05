@@ -1,4 +1,4 @@
-public class Student6{  //ポリモフィズムの考えで作成されたクラス
+public class Student6{  //各クラブの情報を扱うクラス(ポリモフィズムの性質のクラス)
     private String name;     // 氏名
     private Club club;       // Clubオブジェクト
 
@@ -8,10 +8,9 @@ public class Student6{  //ポリモフィズムの考えで作成されたクラ
     }
     public void display(){
         System.out.println("名前：" + name);
-        club.display();  //Clubクラスのdisplayメソッドを使える
+        club.display();
     }
     public void practice(){
         club.practice();
     }
 }
-

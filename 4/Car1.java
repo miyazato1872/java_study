@@ -1,4 +1,4 @@
-public class Car1{  //スーパークラス
+public class Car1{
     private int no;
 
     public void setNo(int n){

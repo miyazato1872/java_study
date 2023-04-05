@@ -1,10 +1,10 @@
 public class Student3 extends Person3{
     private int stuNo;
 
-    public Student3(String name){
-        this(name, 999); //this()はコンストラクタの呼び出し。7行目のStudent3(String name, int stuNo)を呼び出していることになる
+    public Student3(String name){  //コンストラクタ
+        this(name, 999);  //nameは7行目を呼び出している
     }
-    public Student3(String name, int stuNo){
+    public Student3(String name, int stuNo){  //コンストラクタ
         super(name);
         this.stuNo = stuNo;
     }

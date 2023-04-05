@@ -1,17 +1,17 @@
 public class StuSample5{
     public static void main(String[] args){
-        Student5 stu1 = new Student5("菅原",1);  //サブクラスのオブジェクトを生成
-        Person5 psn = stu1;  //スーパークラスの変数psnにサブクラスの変数を代入している
-        psn.display();  //Person5クラスから呼び出している。psnはPerson5クラスだけに干渉できる
-        // psn.chgStuNo(1001);  //サブクラス独自のメソッドで、変数psnはスーパークラスのみ歯科干渉できないのでコンパイルエラーになる
+        Student5 stu1 = new Student5("菅原",1);
+        Person5 psn = stu1;  //サブクラスからスーパークラスに代入しているので、自動で型変換が行われる
+        psn.display();  //サブクラス(Student5)のdisplayメソットがオーバーライドで呼び出される
+//        psn.chgStuNo(1001);
 
     /* 補足：instanceofキーワード
-       オブジェクトのクラスを特定することだできるキーワード
+       オブジェクトのクラスを特定する
        対象オブジェクト instanceof クラス名 */
-        if(psn instanceof Student5){  //変数psnは、Student5クラスのインスタンスですか？と聞いている記述
-            Student5 stu2 = (Student5)psn;  //キャストを使用。しないとコンパイルエラーになる
-            stu2.chgStuNo(1001);
-            stu2.display();
-        }
+//        if(psn instanceof Student5){
+//            Student5 stu2 = psn;
+//            stu2.chgStuNo(1001);  //サブクラスの型への型変換をしているので使える
+//            stu2.display();
+//        }
     }
 }
